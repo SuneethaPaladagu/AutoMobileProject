@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>AutoMobiles</title>
+        <style>
+            table, th, td {
+               border: 1px solid black;
+               border-spacing: 0px;
+            }
+            th, td {
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+    
+     <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Description</th>
+                     
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="car : ${carList}">
+                    <td th:text="${car.make}"></td>
+                    <td th:text="${car.model}"></td>
+                    <td th:text="${car.year}"></td>
+                    <td th:text="${car.description}"></td>
+                   
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <h2>Add Car</h2>
+        <form action="/addCar" method="POST">
+            Make  &nbsp; <input type="text" id="make" name="make" /><br />
+            Model        <input type="text" id="model" name="model" /><br />
+            Year  &nbsp; &nbsp; <input type="text" id="year" name="year" /><br />
+            Description <textarea rows="5" cols="70" id="description" name="description" /><br />
+            <input type="submit" />
+        </form>
+        <h2>Search for cars</h2>
+        <form action="/search" method="POST">
+            <input type="text" name="search" id="search" th:value="${search}" />
+            <input type="submit" value="Search" />
+        </form>
+        
+         <h2>Delete car</h2>
+        <form action="/delete" method="POST">
+            <input type="text" name="delete" id="delete" th:value="${delete}" />
+            <input type="submit" value="Delete" />
+        </form>
+    </body>
+</html>
