@@ -51,11 +51,6 @@ public class CarServiceImplTest {
 		}
 	  
 	   @Test
-		public void deleteCarTest() throws Exception {
-		   
-			//when(carServiceImpl.deleteCars(any(String.class));
-		}
-	   @Test
 	    public void insertCar() throws Exception {
 	   		
 		   carServiceImpl.save(any(Car.class));

@@ -50,21 +50,7 @@ public class CarControllerTest {
 	@Before
 	public void init() {
 		mockMvc = MockMvcBuilders.standaloneSetup(carController).setHandlerExceptionResolvers(webApplicationContext).build();
-    }
-	
-/*	@Test
-	public void addCarTest() throws Exception{
-		
-		
-		Car car=new Car();
-		car.setId("1");
-		car.setMake("M1");
-		car.setModel("New");
-		car.setDescription("Desc");	 	
-	
-		mockMvc.perform(get("/home")).andExpect(status().isOk());
-	}*/
-
+    }	
 	
 	 @Test
 	    public void addCarTest() throws Exception {
@@ -79,15 +65,7 @@ public class CarControllerTest {
 	            .andExpect(forwardedUrl("/home"));
 	 
 	    }
-	
-/*
-	@Test
-	public void deleteCarTest() throws Exception{
-		 String foodId = "M11";
-		 doNothing().when(carService).deleteCars(foodId);
-		 mockMvc.perform(get("/delete").param("delete", "M11")).andExpect(status().isOk());
-	}*/
-
+	 
 	@Test
 	public void getAllCarsTest() throws Exception{
 		
@@ -104,14 +82,7 @@ public class CarControllerTest {
 		car1.setDescription("Desc2");
 		
 		Mockito.when(carService.getAll()).thenReturn(Arrays.asList(car1, car2));
-		
-		//mockMvc.perform(get("/home").contentType(MediaType.TEXT_HTML)).andExpect(status().isOk());
-
-		//Mockito.when((carService).getAll()).thenReturn(li_car);
-		
-		 // mockMvc.perform(get("/")).andExpect(status().isOk());
-		//mockMvc.perform(get("/home")).andExpect(status().isOk());	 
-		//	mockMvc.perform(get("/").contentType(MediaType.TEXT_HTML).content(MockTestUtil.convertToJsonFormat(new Car()))).andExpect(status().isOk());
+				
 	}
 	
 
