@@ -1,0 +1,9 @@
+applications:
+ - name: AutoMobiles
+   buildpack: java_buildpack
+   path: build/libs/AutomobileIndustryExampleNew.war
+   instances: 1
+   memory: 512M
+  # host: demo
+   env:
+    JBP_CONFIG_OPENJDK: 'verion: 1.8.+'
