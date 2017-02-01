@@ -55,7 +55,7 @@ public class EmployeeController {
 	
 	
 	//cloud config
-	 @Value("${msgnew}")
+	// @Value("${msgnew}")
 	    private String name;
 	    
 	    @RequestMapping(value = "/cloud")

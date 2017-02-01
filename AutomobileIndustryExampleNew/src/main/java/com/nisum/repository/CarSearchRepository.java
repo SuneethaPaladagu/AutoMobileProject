@@ -1,7 +1,5 @@
 package com.nisum.repository;
 
-import static org.mockito.Mockito.never;
-
 import java.util.Collection;
 import java.util.List;
 

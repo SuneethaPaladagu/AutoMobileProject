@@ -12,10 +12,11 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: "war"
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'demo'
+	baseName = 'AutoMobiles'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -38,7 +39,7 @@ dependencies {
 	compile "org.springframework.boot:spring-boot-starter-web:1.4.3.RELEASE"	
 	compile "org.springframework.boot:spring-boot-starter-tomcat:1.4.3.RELEASE"
 	compile "org.springframework.boot:spring-boot-starter-data-mongodb"
-	compile "org.springframework.boot:spring-boot-starter-thymeleaf"
+	compile "org.springframework.boot:spring-boot-starter-thymeleaf:1.4.3.RELEASE"
 	compile "org.springframework.boot:spring-boot-starter-data-jpa"
 	compile "org.springframework:spring-jdbc:4.3.2.RELEASE"
 	
@@ -49,6 +50,11 @@ dependencies {
 	compile "org.springframework.security:spring-security-web"
 	compile "org.springframework.security:spring-security-config"
 	compile	"org.springframework.security.oauth:spring-security-oauth2:2.0.9.RELEASE"
+	
+	//thymeleaf security
+	//compile "org.thymeleaf:thymeleaf-spring4:jar:2.1.2.RELEASE"
+	//compile "org.thymeleaf:thymeleaf:3.0.3.RELEASE"
+	compile "org.thymeleaf.extras:thymeleaf-extras-springsecurity4"
 	
 	//for cloud
 	compile "org.springframework.cloud:spring-cloud-starter-config"
